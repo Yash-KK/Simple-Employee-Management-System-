@@ -1,0 +1,21 @@
+{% extends 'App1/base.html' %}
+
+    {% block "title" %}
+        Office Employee Management  
+    {% endblock "title" %} 
+
+
+    
+    {% block "body" %}
+    <div class="container">
+        {% comment %} <h1>Office Employee Management System</h1> {% endcomment %}
+        <hr>
+        <a class="btn btn-primary" href="{% url 'view-all' %}" role="button">View All Employees</a>  
+        <a class="btn btn-primary" href="{% url 'add' %}" role="button">Add an Emplyoee</a>
+        <a class="btn btn-primary" href="{% url 'remove' %}" role="button">Remove an Emplyoee</a>
+        <a class="btn btn-primary" href="{% url 'filter' %}" role="button">Filter Emplyoee Details</a>    
+    </div>    
+    {% endblock "body" %}
+    
+
+  

@@ -1,0 +1,26 @@
+{% extends 'App1/base.html' %}
+
+{% block "title" %}
+    Remove
+{% endblock "title" %}
+
+{% block "body" %}
+    <div class="container" >
+        <h1>Remove an Employee</h1>
+        <hr>
+        <!-- Example single danger button -->
+<div class="btn-group">
+    <button type="button" class="btn btn-primary dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+      Select Name to remove an Employee
+    </button>
+    <ul class="dropdown-menu">
+        {% for e in emps %}
+        <li><a class="dropdown-item" href="{% url 'remove-int' e.id %}"> {{ e.first_name }} {{ e.last_name }} </a></li> 
+        {% endfor %}
+           
+    </ul>
+  </div>
+    </div>
+{% endblock "body" %}
+
+
