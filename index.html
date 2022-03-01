@@ -1,0 +1,65 @@
+{% extends 'App1/base.html' %}
+
+    {% block "title" %}
+        Office Employee Management  
+    {% endblock "title" %} 
+
+
+    
+    {% block "body" %}
+    <div class="container">
+        {% comment %} <h1>Office Employee Management System</h1> {% endcomment %}
+        <hr>
+        <a class="btn btn-primary" href="{% url 'view-all' %}" role="button">View All Employees</a>  
+        <a class="btn btn-primary" href="{% url 'add' %}" role="button">Add an Emplyoee</a>
+        <a class="btn btn-primary" href="{% url 'remove' %}" role="button">Remove an Emplyoee</a>
+        <a class="btn btn-primary" href="{% url 'filter' %}" role="button">Filter Emplyoee Details</a>    
+    </div>    
+    <hr>
+    <hr>
+    
+    <div class='container'>
+        <h1>Department</h1>
+        <table class="table table-dark table-hover">
+            <thead>
+              <tr>
+                <th style="text-align:center" scope="col">Department Number</th>               
+                <th style="text-align:center" scope="col">Department</th>               
+              </tr>
+            </thead>
+    
+            <tbody>
+                {% for d in dept %}            
+              <tr>
+                <th style="text-align:center" scope="row"> {{ d.id }} </th>
+                <td style="text-align:center"> {{ d.name }} </td>                
+              </tr>   
+              {% endfor %}       
+            </tbody>
+          </table>
+    </div>
+
+    <div class='container'>
+        <h1>Role</h1>
+        <table class="table table-dark table-hover">
+            <thead>
+              <tr>
+                <th  style="text-align:center" scope="col">Role Id</th>               
+                <th style="text-align:center" scope="col">Role</th>               
+              </tr>
+            </thead>
+    
+            <tbody>
+                {% for r in role %}            
+              <tr>
+                <th style="text-align:center" scope="row"> {{ r.id }} </th>
+                <td style="text-align:center" > {{ r.name }} </td>                
+              </tr>   
+              {% endfor %}       
+            </tbody>
+          </table>
+    </div>
+    {% endblock "body" %}
+    
+
+  
